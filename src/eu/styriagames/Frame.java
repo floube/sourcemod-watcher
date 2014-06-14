@@ -192,7 +192,7 @@ public class Frame extends javax.swing.JFrame implements Runnable {
 
                         String compiledName = file.getName().replace(".sp", ".smx");
 
-                        taConsole.append(executeCommand(String.format("cmd /C cd \"%s\" && spcomp \"%s\\%s\" && move \"%s\\%s\" \"%s\"", compilerDir, watchingDir, file.getName(), compilerDir, compiledName, moveToDir)));
+                        taConsole.append(executeCommand(String.format("cmd /C cd /d \"%s\" && spcomp \"%s\\%s\" && move \"%s\\%s\" \"%s\"", compilerDir, watchingDir, file.getName(), compilerDir, compiledName, moveToDir)));
                         taConsole.setCaretPosition(taConsole.getDocument().getLength());
 
                         lastModified.remove(j);
